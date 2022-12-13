@@ -1,1 +1,41 @@
-use python3 g_truth.py
+| Generate Ground Truths, Actions for world:
+-------
+Generates folders containg the graphs and actions for each world.
+USAGE: 
+1.) python3 g_truth.py 
+
+| Display World and Actions(HeatMap):
+-------
+**Ensure anaconda/python3 is in the current $PATH on the ilab machine
+
+USAGE:
+1.) Run make
+2.) python3 main.py 
+3.) select world, and then desired action in top left drop-down
+4.) slect 'run' under actions and use the arrows to go through
+    each action. (see 'DETAILS' for details about visualization)
+DETAILS:
+The top highlights what action and sensor reading you are presently
+occupying. Additionally, the grid is color cordinate to display:
+white,blue,red,and dark red cells. White being the lowest, and dark red
+being high probability.
+
+| Show Probability Plot
+-------
+You can adjust the # of experiments and # of actions in calc_agent_prob.py file
+
+USAGE:
+python3 calc_agent_prob.py graphs results
+
+
+| Show Error Plot
+-------
+You can adjust the # of experiments and # of actions in the filter_err.py file
+
+USAGE:
+1.) Generate graphs & results (see Generate Ground Truths, Actions for world)
+2.) python filter_err.py graphs results
+
+
+
+
