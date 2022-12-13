@@ -1,14 +1,22 @@
+Q5:
 | Generate Ground Truths, Actions for world:
 -------
 Generates folders containg the graphs and actions for each world.
-USAGE: 
+USAGE:
+0.) Ensure anaconda is in $PATH and environement set
 1.) python3 g_truth.py 
 
 | Display World and Actions(HeatMap):
 -------
 **Ensure anaconda/python3 is in the current $PATH on the ilab machine
+For ilab use the following commands to add anaconda to path.
+	
+    $ export PATH="$PATH:/koko/system/anaconda/bin"
+	$ source activate python38
+
 
 USAGE:
+0.) Ensure anaconda is in $PATH, and environment active
 1.) Run make
 2.) python3 main.py 
 3.) select world, and then desired action in top left drop-down
@@ -25,7 +33,8 @@ being high probability.
 You can adjust the # of experiments and # of actions in calc_agent_prob.py file
 
 USAGE:
-python3 calc_agent_prob.py graphs results
+0.) Ensure anaconda is in $PATH and environement set
+1.) python3 calc_agent_prob.py graphs results
 
 
 | Show Error Plot
@@ -33,9 +42,30 @@ python3 calc_agent_prob.py graphs results
 You can adjust the # of experiments and # of actions in the filter_err.py file
 
 USAGE:
+0.) Ensure anaconda is in $PATH and environement set
 1.) Generate graphs & results (see Generate Ground Truths, Actions for world)
 2.) python filter_err.py graphs results
 
+
+Q7:
+| Show Intermediate Optimal Utilities 
+
+USAGE:
+0.) Ensure anaconda is in $PATH and environement set
+1.) python3 val_iterate.py
+
+NOTES:
+
+Interpreting Optimal Policy Array
+- To interpret a policy of a state, given A[], its optimal policy, if 
+we want the optimal policy of some state s2: pi*(s2) =  A[i-1] = A[2-1] = 
+A[1].
+- with an inital discountfactor of 0.9, our original utilities are all initlized to zero, and updated 
+each iteration.
+
+RESULTS:
+Computationally, we get a run time of 0.136s, and a takes 124 iterations to get us a policy of [2,2,3,1]
+$
 
 
 
